@@ -1,0 +1,73 @@
+name: Intercomet Core
+version: '$version'
+
+main: net.intercomet.iccore.Intercomet
+api-version: '1.21.11'
+load: STARTUP
+
+authors: [ lunaraselfie ]
+
+commands:
+  fly:
+    description: Toggle flight
+    aliases: [flight]
+  vanish:
+    description: Toggle vanish
+    aliases: [v, sv]
+  invsee:
+    description: View player inventory
+  gmc:
+    description: Creative mode
+    aliases: [creative]
+  gms:
+    description: Survival mode
+    aliases: [survival]
+  gma:
+    description: Adventure mode
+    aliases: [adventure]
+  gmsp:
+    description: Spectator mode
+    aliases: [spectator]
+  punish:
+    description: Opens a user friendly Punish GUI with various options
+    aliases: [p, pgui, punishgui]
+  punishhistory:
+    description: Shows all punish history
+    aliases: [phistory]
+  staff:
+    description: Toggles the viewing of staff related commands and functions
+    aliases: [stoggle]
+
+permissions:
+  core.staff:
+    description: All staff perms
+    default: op
+    children:
+      core.staff.fly: true
+      core.staff.vanish: true
+      core.staff.gms: true
+      core.staff.gma: true
+      core.staff.gmsp: true
+      core.staff.gmc: true
+      core.staff.punish: true
+      core.staff.punish.history: true
+      core.staff.toggle: true
+
+  core.staff.fly:
+    default: op
+  core.staff.vanish:
+    default: op
+  core.staff.gms:
+    default: op
+  core.staff.gmc:
+    default: op
+  core.staff.gma:
+    default: op
+  core.staff.gmsp:
+    default: op
+  core.staff.punish:
+    default: op
+  core.staff.punish.history:
+    default: op
+  core.staff.toggle:
+    default: op
