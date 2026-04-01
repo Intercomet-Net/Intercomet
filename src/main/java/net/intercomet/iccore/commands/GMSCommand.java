@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package net.intercomet.iccore.commands;
 
 import net.intercomet.iccore.util.Perm;
@@ -25,3 +26,32 @@ public class GMSCommand implements CommandExecutor {
         return true;
     }
 }
+=======
+package net.intercomet.iccore.commands;
+
+import net.intercomet.iccore.util.Perm;
+import net.intercomet.iccore.util.Values;
+import org.bukkit.GameMode;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+
+import static net.intercomet.iccore.util.Perm.checkPerms;
+import static net.intercomet.iccore.util.Perm.noPerms;
+
+public class GMSCommand implements CommandExecutor {
+    @Override
+    public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String @NotNull [] strings) {
+        if (!(commandSender instanceof Player player)) return true;
+
+        if (!checkPerms(player, "core.staff.gms")) return noPerms(player);
+
+        player.setGameMode(GameMode.SURVIVAL);
+        player.sendMessage(Values.getPrefix() + "Your gamemode has been set " + Values.getAltPrefix() + "SURVIVAL");
+
+        return true;
+    }
+}
+>>>>>>> 6c8a590 (mmm)
